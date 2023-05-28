@@ -1,5 +1,8 @@
+//Criando Lista e Exibindo Lista
+
 #include <stdio.h>
 #include <stdlib.h>
+
 struct ponto{
     
     double x;
@@ -20,13 +23,20 @@ void add(double x, double y){
    listaPontos = p;
 }
 
+void imprime(){
+    Ponto *auxLista = listaPontos;
+    while(auxLista != NULL){
+        printf("\nPonto(%1f,%.1f)", auxLista ->x, auxLista ->y);
+        auxLista = auxLista->prox;
+    }
+}
+
 int main(){
     
     add(1,5);
     add(2,7); 
     add(5,3);
 
-    printf("%2.f", listaPontos -> x);
-    printf("%2.f", listaPontos -> y);
+    imprime();
 return 0;
 }
